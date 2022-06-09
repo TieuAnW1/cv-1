@@ -1,3 +1,278 @@
-h1 {
-    color: aqua;
+@import url('https://fonts.googleapis.com/css2?family=Suwannaphum:wght@100;300;400;700;900&display=swap');
+:root {
+    --text-color-blue: #35c0f2;
+    --text-color-blue-light: #73ceef;
+    --text-color-black: #555;
+    --white-color: #fff;
+    --white-color-light: rgba(255, 255, 255, 0.8);
+    --background-progress: #2e5b6c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Suwannaphum', sans-serif ;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+	line-height: 20px;
+	color: var(--text-color-black);
+    background-color: var(--background-progress);
+}
+
+.wrapper {
+    width: 800px;
+    height: auto;
+    display: flex;
+    margin: 20px auto;
+}
+
+.left {
+    width: 280px;
+    background: var(--text-color-blue);
+    color: var(--white-color);
+}
+
+.profile {
+    width: 100%;
+    height: 280px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    border: 30px solid var(--text-color-blue);
+    border-radius: 50%;
+}
+
+.name-and-job {
+    margin-bottom: 20px;
+}
+
+.name {
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.job {
+    text-align: center;
+    font-size: 14px;
+    color: var(--white-color-light)
+}
+
+.content {
+    padding: 0 20px;
+}
+
+.content__item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--text-color-blue-light);
+}
+
+.foreign-languages {
+    border-bottom: 0;
+}
+
+.contact {
+    border-top: 1px solid var(--text-color-blue-light);
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.bold {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.content__item ul li {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 6px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--white-color);
+    color: var(--text-color-blue);
+    font-size: 16px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.data {
+    color: var(--white-color-light);
+}
+
+.skill-name,
+.language-name {
+    text-transform: uppercase;
+    color: var(--white-color-light);
+    width: 20%;
+    margin-right: 8px;
+}
+
+.skill-progress,
+.language-progress {
+    width: 60%;
+    height: 4px;
+    position: relative;
+    background-color: var(--background-progress);
+    margin-right: 4px;
+}
+
+.skill-progress span,
+.language-progress span {
+    height: 100%;
+    background-color: var(--white-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+li:nth-child(1) .skill-progress span {
+    width: 60%;
+}
+
+li:nth-child(2) .skill-progress span {
+    width: 55%;
+}
+
+li:nth-child(3) .skill-progress span {
+    width: 50%;
+}
+
+li:nth-child(4) .skill-progress span {
+    width: 45%;
+}
+
+li:nth-child(5) .skill-progress span {
+    width: 40%;
+}
+
+.skill-percents,
+.language-percents {
+    flex: 1;
+    text-align: center;
+}
+
+li:nth-child(1) .language-progress span {
+    width: 40%;
+}
+
+li:nth-child(2) .language-progress span {
+    width: 55%;
+}
+
+.right {
+    flex: 1;
+    background-color: var(--white-color);
+}
+
+.right__item {
+    padding: 20px 20px 0;
+}
+
+.right__item .bold {
+    color: var(--text-color-blue);
+    font-weight: 700;
+}
+
+.short-term {
+    margin-bottom: 10px;
+}
+
+.semi-bold {
+    font-weight: bold;
+}
+
+.right-border-bottom {
+    margin-top: 20px;
+    border-bottom: 1px solid var(--text-color-blue-light);
+}
+
+.right__item ul li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.right__item ul li > * {
+    margin-bottom: 10px;
+}
+
+/* tạo vòng tròn */
+.experience ul li::before,
+.education ul li::before {
+    content: "";
+    height: 8px;
+    width: 8px;
+    border: 2px solid var(--text-color-blue);
+    top: 4px;
+    left: -10px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* tạo đường thẳng dưới vòng tròn */
+.experience ul li::after,
+.education ul li::after {
+    position: absolute;
+    width: 2px;
+    height: 84px;
+    background-color: var(--text-color-blue);
+    top: 10px;
+    left: -8px;
+    content: "";
+}
+
+.experience ul li:nth-child(2)::after,
+.education ul li:nth-child(2)::after {
+    height: 56px;
+}
+
+.hobbies {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hobby-icon {
+    font-size: 50px;
+    border: 2px solid var(--text-color-blue);
+    border-radius: 50%;
+    background-color: var(--white-color);
+    padding: 10px;
+    color: var(--text-color-blue);
+    position: relative;
+}
+
+.hobby-icon::after {
+    position: absolute;
+    content: "";
+    width: 130px;
+    height: 2px;
+    background-color: var(--text-color-blue);
+    top: 36px;
+    left: 70px;
+}
+
+.hobby-icon:last-child::after {
+    width: 0;
 }
